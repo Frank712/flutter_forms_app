@@ -31,7 +31,7 @@ class BlocCounterView extends StatelessWidget {
             Text('Bloc counter ${counterBloc.state.transactionCounter}')),
         actions: [
           IconButton(
-            onPressed: () => context.read<CounterBloc>().add(CounterReset()),
+            onPressed: () => context.read<CounterBloc>().resetCounter(),
             icon: const Icon(Icons.refresh_outlined),
           ),
         ],
