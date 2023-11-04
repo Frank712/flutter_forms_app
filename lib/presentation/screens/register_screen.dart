@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forms_app/presentation/widgets/inputs/custom_text_field_form.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -19,6 +20,48 @@ class _RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: SingleChildScrollView(
+          child: Column(
+            children: const [
+              FlutterLogo(size: 100),
+              _RegisterForm(),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _RegisterForm extends StatelessWidget {
+  const _RegisterForm();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: [
+          const CustomTextFormField(),
+          const SizedBox(
+            height: 10,
+          ),
+          const CustomTextFormField(),
+          const SizedBox(
+            height: 20,
+          ),
+          FilledButton.tonalIcon(
+            onPressed: () {},
+            icon: const Icon(Icons.save),
+            label: const Text('Guardar usuario'),
+          ),
+        ],
+      ),
+    );
   }
 }
