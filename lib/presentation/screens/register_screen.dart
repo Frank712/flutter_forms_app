@@ -105,7 +105,6 @@ class _RegisterFormState extends State<_RegisterForm> {
             onPressed: () {
               final isValid = _formKey.currentState!.validate();
               if (isValid) return;
-              print('$username $email $password');
             },
             icon: const Icon(Icons.save),
             label: const Text('Guardar usuario'),
